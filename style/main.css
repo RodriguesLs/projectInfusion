@@ -13,6 +13,7 @@ img {
     margin-left: auto;
     padding-left: 1em;
     padding-right: 1em;
+    max-width: 980px;
 }
 
 .header {
@@ -21,6 +22,7 @@ img {
 }
 
 .logo-text {
+    text-align: right;
     text-transform: uppercase;
     padding: 20px;
     background-color: #63c6ae;
@@ -40,7 +42,7 @@ img {
 .header__nav ul {
     margin: 0;
     padding: 0;
-
+    
 }
 
 .header__nav li {
@@ -74,6 +76,10 @@ img {
     linear-gradient(-45deg, white 50%, transparent 50%) left calc(50% - 20px) bottom no-repeat,  
     url(../img/01.jpg) center;
     background-size: 40px 40px, 40px 40px, cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero__title {
@@ -228,7 +234,7 @@ img {
 
 .last-articles__thumbs img {
     display: block;
-    width: 100;
+    width: 100%;
 }
 
 .laptop-slider {
@@ -243,7 +249,7 @@ img {
 }
 
 .slideshow {
-    white-space: no-wrap;
+    white-space: nowrap;
 }
 
 .quote-container {
@@ -267,4 +273,88 @@ img {
 
 .no-js .quote-slideshow figure + figure {
     margin-top: 5em;
+}
+
+.footer {
+    background-color: #242a2c;
+    padding: 50px 0 250px;
+    color: #454e51;
+    font-size: 14px;
+}
+
+.footer__links {
+    list-style: none;
+}
+
+.footer__links a {
+    color: #454e51;
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-logo {
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        position: fixed;
+    }
+
+    .logo-text {
+        width: 25%;
+        box-sizing: border-box;
+    }
+
+    .header__btnMenu{
+        display: none;
+    }
+
+    .header__nav {
+        float: left;
+        width: 75%;
+        clear: none;
+        max-width: 800px;
+    }
+
+    .header__nav ul{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .header__nav li{
+        border-bottom: none;
+        flex-grow: 1;
+    }
+
+    .header__nav a {
+        background-color: white;
+    }
+
+    .people-cards{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+    }
+
+    .content .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    .last-articles__thumbs {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .footer .container {
+        display: flex;
+    }
+
+    .footer .container > * {
+        margin: 1.5em;
+    }
+
+
 }
